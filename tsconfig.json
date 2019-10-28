@@ -9,7 +9,10 @@
     "types": [],
     "baseUrl": "./node_modules",
     "jsx": "preserve",
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+        "vscode-nls": ["./src/languages/vscode-nls.ts"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]

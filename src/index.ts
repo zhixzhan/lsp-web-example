@@ -4,19 +4,9 @@ import "./index.css";
 // @ts-ignore
 self.MonacoEnvironment = {
   getWorkerUrl: function(moduleId, label) {
-    if (label === "typescript" || label === "javascript") {
-      return "./ts.worker.bundle.js";
-    }
     return "./editor.worker.bundle.js";
   }
 };
-
-// const editor = monaco.editor.create(document.body, {
-//   value: ["function x() {", '\tconsole.log("Hello world!");', "}"].join("\n"),
-//   language: "typescript",
-//   theme: "vs",
-// });
-
 
 monaco.languages.register({
   id: 'myCustomLanguage'
@@ -47,8 +37,8 @@ const myCoolTheme: monaco.editor.IStandaloneThemeData = {
 // Define a new theme that constains only rules that match this language
 monaco.editor.defineTheme('myCoolTheme', myCoolTheme);
 
-var editor = monaco.editor.create(document.getElementById('container'), {
-  theme: 'vs',
+var editor = monaco.editor.create(document.body, {
+  theme: 'myCoolTheme',
   value: getCode(),
   language: 'myCustomLanguage'
 });
